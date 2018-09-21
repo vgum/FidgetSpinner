@@ -1,3 +1,5 @@
+package src;
+
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
