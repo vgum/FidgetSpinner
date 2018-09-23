@@ -58,8 +58,11 @@ public class MainWindow {
 		////////// COLUMN 2 //////////////////
 		
 		//Add spinner
-		Matrix spinner = new Matrix(5);
-		System.out.println("break");
+		conStraints.anchor = GridBagConstraints.CENTER;
+		Matrix FS = new Matrix(5);
+		conStraints.gridx = 1;
+		conStraints.gridy = 1;
+		panel.add(FS, conStraints);
 		
 		window.setVisible(true);
 	}

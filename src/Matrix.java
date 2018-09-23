@@ -15,12 +15,14 @@ import java.util.HashMap;
 
 public class Matrix extends JPanel {
 	
-	private HashMap Spinner;
+	public HashMap Spinner;
+	private final int nRows;
 	private MatrixTile[] rows;
 	private MatrixTile[] columns;
 	private Rectangle rect;
 
 	public Matrix(int nRows) {
+		this.nRows = nRows;
 		Spinner = new HashMap<Integer, MatrixTile[]>();
 		int id = 0;
 		MatrixTile[] row = new MatrixTile[nRows];
@@ -33,14 +35,23 @@ public class Matrix extends JPanel {
 		}
 	}
 	
-	protected void paintComponent(Graphics g) {
-	    Graphics2D g2 = (Graphics2D) g;
-		
-		super.paintComponent(g2);  
-		g2.setColor(Color.RED);  
-	    g2.fillRect(0,0,10,10);
-		//g2.draw(rect);  
-	     
+	protected void paintComponent(Graphics g) {  
+		 //Graphics2D g2 = (Graphics2D) g;
+	     //for(int i = 0; i < nRows; i++) {
+	    //	rows = (MatrixTile[]) Spinner.get(i);
+	    //	for (int j = 0; j < rows.length; j++) {
+	    //		Rectangle tile = rows[j].getTile();
+	    //		tile.x = i+9;
+	    //		tile.y = j;
+	    //		g2.setColor(rows[j].getColor());
+	    //		g2.draw(tile);
+	    //	}
+	    // }
+		 g.setColor(Color.BLUE);
+		 g.fillRect(0, 0, 100, 30);
+		 g.setColor(Color.GREEN);
+		 g.fillRect(100, 0, 100, 30);
+		 
 	  }
 
 	 // public Dimension getPreferredSize() {
