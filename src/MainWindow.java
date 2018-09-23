@@ -1,3 +1,5 @@
+package src;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -9,6 +11,8 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.GridBagConstraints;
 import java.awt.Rectangle;
+
+//HC Comment
 
 public class MainWindow {
 	
