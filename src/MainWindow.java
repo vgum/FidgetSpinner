@@ -1,4 +1,4 @@
-package src;
+
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -62,7 +62,7 @@ public class MainWindow {
 		////////// COLUMN 2 //////////////////
 		
 		//Add spinner
-		conStraints.anchor = GridBagConstraints.CENTER;
+		conStraints.anchor = GridBagConstraints.NORTHWEST;
 		Matrix FS = new Matrix(5);
 		conStraints.gridx = 1;
 		conStraints.gridy = 1;

@@ -1,4 +1,4 @@
-package src;
+
 
 import javax.swing.JButton;
 import javax.swing.JComponent;
@@ -38,21 +38,21 @@ public class Matrix extends JPanel {
 	}
 	
 	protected void paintComponent(Graphics g) {  
-		 //Graphics2D g2 = (Graphics2D) g;
-	     //for(int i = 0; i < nRows; i++) {
-	    //	rows = (MatrixTile[]) Spinner.get(i);
-	    //	for (int j = 0; j < rows.length; j++) {
-	    //		Rectangle tile = rows[j].getTile();
-	    //		tile.x = i+9;
-	    //		tile.y = j;
-	    //		g2.setColor(rows[j].getColor());
-	    //		g2.draw(tile);
-	    //	}
-	    // }
-		 g.setColor(Color.BLUE);
-		 g.fillRect(0, 0, 100, 30);
-		 g.setColor(Color.GREEN);
-		 g.fillRect(100, 0, 100, 30);
+		 Graphics2D g2 = (Graphics2D) g;
+	     for(int i = 0; i < nRows; i++) {
+	    	rows = (MatrixTile[]) Spinner.get(i);
+	    	for (int j = 0; j < rows.length; j++) {
+	    		Rectangle tile = rows[j].getTile();
+	    		tile.x = j * 50;
+	    		tile.y = i * 50;
+	    		g2.setColor(rows[j].getColor());
+	    		g2.draw(tile);
+	    	}
+	     }
+		//.setColor(Color.BLUE);
+		// g.fillRect(0, 0, 100, 30);
+		// g.setColor(Color.GREEN);
+		// g.fillRect(100, 0, 100, 30);
 		 
 	  }
 

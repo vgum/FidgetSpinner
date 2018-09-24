@@ -1,4 +1,4 @@
-package src;
+
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 
 public class MatrixTile {
 	
-	private final int width = 15;
+	private final int width = 5;
 	private final int id;
 	private final Color defaultColor = Color.GREEN;
 	private Rectangle tile;
