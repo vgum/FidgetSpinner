@@ -41,8 +41,8 @@ public class MainWindow {
 		conStraints.anchor = GridBagConstraints.NORTHWEST;
 		conStraints.fill = GridBagConstraints.VERTICAL;
 		
-		conStraints.weightx = 0.1;
-		conStraints.weighty = 0.1;
+		conStraints.weightx = 0.3;
+		conStraints.weighty = 0.3;
 		
 		b1= new JButton("Spinner 1");
 		conStraints.gridx = 0;
@@ -62,10 +62,15 @@ public class MainWindow {
 		////////// COLUMN 2 //////////////////
 		
 		//Add spinner
-		conStraints.anchor = GridBagConstraints.NORTHWEST;
 		Matrix FS = new Matrix(5);
+		conStraints.anchor = GridBagConstraints.CENTER;
+		conStraints.fill = GridBagConstraints.BOTH;
 		conStraints.gridx = 1;
 		conStraints.gridy = 1;
+		conStraints.gridheight = 2;
+		conStraints.weightx = 0.8;
+		conStraints.weighty = 0.5;
+		//conStraints.gridheight = 2;
 		panel.add(FS, conStraints);
 		
 		window.setVisible(true);
