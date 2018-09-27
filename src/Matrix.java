@@ -25,13 +25,14 @@ public class Matrix extends JPanel implements MouseListener {
 	private MatrixTile[] rows;
 	private MatrixTile[] columns;
 	private Rectangle rect;
+	public Rectangle tile;
 
 	public Matrix(int nRows) {
 		this.nRows = nRows;
 		Spinner = new HashMap<Integer, MatrixTile[]>();
 		int id = 0;
-		MatrixTile[] row = new MatrixTile[nRows];
 		for (int i = 0; i < nRows; i ++) {
+			MatrixTile[] row = new MatrixTile[nRows];
 			for (int j = 0; j < nRows; j++) {
 				row[j] = new MatrixTile(id);
 				id++;
@@ -39,31 +40,41 @@ public class Matrix extends JPanel implements MouseListener {
 			Spinner.put(i, row);
 		}
 		addMouseListener(this);
+		
 	}
 	
 	protected void paintComponent(Graphics g) {  
 		 Graphics2D g2 = (Graphics2D) g;
 		 Rectangle tile = null;
-		 for(int i = 0; i < nRows; i++) {
+		 for(int i = 0; i < nRows; i++) {			 
 	    	rows = (MatrixTile[]) Spinner.get(i);
 	    	for (int j = 0; j < rows.length; j++) {
 	    		tile = rows[j].getTile();
-	    		//addMouseListner(rows[j]);
-	    		rows[j].addMouseListener(rows[j]);
 	    		tile.x = j * 40;
 	    		tile.y = i * 40;
+	    		rows[j].addMouseListener(rows[j]);
 	    		g2.setColor(rows[j].getColor());
 	    		g2.draw(tile);
+	    		//g2.fillRect(tile.x, tile.y, tile.width, tile.height);
 	    	}
-	     }		 
+	     }
 	  }
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		if(Spinner.get(0)[0].getTile().contains(e.getY(), e.getX())) {
-			System.out.println("Yey wow we found the tile!!!");
+		MatrixTile tile;
+		for(int i = 0; i < nRows; i++)  {
+			for(int j = 0; j < nRows; j++) {
+				tile = Spinner.get(i)[j];
+				if(tile.getTile().contains(e.getY(), e.getX())) {
+					System.out.println("Yey wow we found the tile " + Spinner.get(i)[j].id);
+					tile.changeColor(Color.GREEN);
+					break;
+				}
+
+			}
 		}
-		System.out.println("X: " + e.getX() + "Y: " + e.getY());
+				
 	}
 
 	@Override

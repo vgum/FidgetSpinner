@@ -16,7 +16,7 @@ public class MatrixTile extends JPanel implements MouseListener {
 	 */
 	private static final long serialVersionUID = 1L;
 	private final int width = 40;
-	private final int id;
+	public final int id;
 	private final Color defaultColor = Color.BLACK;
 	private Rectangle tile;
 	private Color color;
