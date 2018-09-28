@@ -1,3 +1,4 @@
+package src;
 
 
 import javax.swing.JButton;
@@ -12,16 +13,15 @@ import java.awt.Insets;
 import java.awt.GridBagConstraints;
 import java.awt.Rectangle;
 
-//HC Comment
-
 public class MainWindow {
-	
+
 	public static JFrame window;
 	public static JButton b1,b2,b3,b4;
 	public static JPanel panel;
 	public static GridBagLayout gLayout;
 	public static GridBagConstraints conStraints;
 	private static Matrix matrix;
+	public static ColorPicker cp;
 	
 	public static void main(String[] args) {
 		
@@ -58,8 +58,16 @@ public class MainWindow {
 		conStraints.gridx = 0;
 		conStraints.gridy = 2;
 		panel.add(b3, conStraints);
+		System.out.println(MainWindow.b3);
 
-		////////// COLUMN 2 //////////////////
+		////////// COLUMN 2 /////////////////
+		//conStraints.anchor = GridBagConstraints.NORTH;
+
+		cp = new ColorPicker();
+		conStraints.gridx = 0;
+        conStraints.gridy = 3;
+		panel.add(cp,conStraints);
+		System.out.println(MainWindow.cp);
 		
 		//Add spinner
 		Matrix FS = new Matrix(5);
@@ -72,8 +80,15 @@ public class MainWindow {
 		conStraints.weighty = 0.5;
 		//conStraints.gridheight = 2;
 		panel.add(FS, conStraints);
+
+
 		
 		window.setVisible(true);
+
+		Runnable r = new repaintThread(panel);
+		//new Thread(r).start();
 	}
+
+
 }
 	

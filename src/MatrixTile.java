@@ -1,4 +1,4 @@
-
+package src;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -7,7 +7,7 @@ import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 
 public class MatrixTile extends JPanel implements MouseListener {
 	

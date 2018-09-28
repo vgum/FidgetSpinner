@@ -1,4 +1,4 @@
-
+package src;
 
 import javax.swing.JButton;
 import javax.swing.JComponent;
@@ -26,9 +26,11 @@ public class Matrix extends JPanel implements MouseListener {
 	private MatrixTile[] columns;
 	private Rectangle rect;
 	public Rectangle tile;
+	//public Color matrixColor;
 
 	public Matrix(int nRows) {
 		this.nRows = nRows;
+		//this.matrixColor = chosenColor;
 		Spinner = new HashMap<Integer, MatrixTile[]>();
 		int id = 0;
 		for (int i = 0; i < nRows; i ++) {
@@ -41,6 +43,10 @@ public class Matrix extends JPanel implements MouseListener {
 		}
 		addMouseListener(this);
 		
+	}
+
+	public void setColor(Color newColor) {
+		//matrixColor = newColor;
 	}
 	
 	protected void paintComponent(Graphics g) {  
@@ -66,15 +72,19 @@ public class Matrix extends JPanel implements MouseListener {
 		for(int i = 0; i < nRows; i++)  {
 			for(int j = 0; j < nRows; j++) {
 				tile = Spinner.get(i)[j];
-				if(tile.getTile().contains(e.getY(), e.getX())) {
+				if(tile.getTile().contains(e.getX(), e.getY())) {
 					System.out.println("Yey wow we found the tile " + Spinner.get(i)[j].id);
-					tile.changeColor(Color.GREEN);
+					//System.out.println(MainWindow.co);
+					tile.changeColor(MainWindow.cp.currentColor());
+					this.revalidate();
+					this.repaint();
+
 					break;
 				}
 
 			}
 		}
-				
+
 	}
 
 	@Override
