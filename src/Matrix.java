@@ -24,10 +24,7 @@ public class Matrix extends JPanel implements MouseListener {
 	public HashMap<Integer, MatrixTile[]> Spinner;
 	private final int nRows;
 	private MatrixTile[] rows;
-	private MatrixTile[] columns;
-	private Rectangle rect;
 	public Rectangle tile;
-	private boolean firstTime = true;
 
 	public Matrix(int nRows) {
 		this.nRows = nRows;
@@ -47,11 +44,8 @@ public class Matrix extends JPanel implements MouseListener {
 	
 	protected void paintComponent(Graphics g) {
 		 super.paintComponent(g);
-		 super.paintComponent(g);
 		 Graphics2D g2 = (Graphics2D) g;
-		 //super.paintComponent(g);
 		 Rectangle tile = null;
-		 //g2.setStroke(new BasicStroke(5));
 		 for(int i = 0; i < nRows; i++) {			 
 	    	rows = (MatrixTile[]) Spinner.get(i);
 	    	for (int j = 0; j < rows.length; j++) {
@@ -59,60 +53,26 @@ public class Matrix extends JPanel implements MouseListener {
 	    		tile.x = j * 40;
 	    		tile.y = i * 40;
 	    		g2.setColor(rows[j].getColor());
-	    	//	if(!rows[j].isFilled()) {
-	    	//		g2.draw(tile);
-	    	//	} else {
-	    			int x = 69;
-	    			g2.fillRect(tile.x+1, tile.y+1, tile.width-1, tile.height-1);
-	    			g2.setColor(Color.BLACK);
-	    			g2.draw(tile);
-	    	//	}
+	    		g2.fillRect(tile.x+1, tile.y+1, tile.width-1, tile.height-1);
+	    		g2.setColor(Color.BLACK);
+	    		g2.draw(tile);
 	    	}
 	     }
 	  }
-	
-	public void SwingUtilitiesisRightMouseButton(MouseEvent e) {
-		System.out.println("it workkkkkkks");
-	}
 
 	@Override
 	
 	public void mouseClicked(MouseEvent e) {
 		if(e.getButton() == MouseEvent.BUTTON1) {
-			//firstTime = false;
 			MatrixTile tile;
 			for(int i = 0; i < nRows; i++)  {
 				for(int j = 0; j < nRows; j++) {
 					tile = Spinner.get(i)[j];
 					if(tile.getTile().contains(e.getX(), e.getY())) {
-						System.out.println("Yey wow we found the tile " + Spinner.get(i)[j].id);
 						tile.changeColor(Color.GREEN);
-						//this.invalidate();
-						
-						//this.revalidate();
-						//this.repaint();
-						//this.rede
-						//this.setVisible(true);
-						////thirepaint();
-						//this.setVisible(false);
 						break;
 					}
-					//this.invalidate();
-					//>this.revalidate();
 					this.repaint();
-					this.repaint();
-					this.repaint();
-					this.repaint();
-					this.repaint();
-					this.repaint();
-					this.repaint();
-					this.repaint();
-					this.repaint();
-					this.repaint();
-					this.repaint();
-					this.repaint();
-					//this.doLayout();
-				
 				}
 			}
 		}	
@@ -122,25 +82,10 @@ public class Matrix extends JPanel implements MouseListener {
 				for(int j = 0; j < nRows; j++) {
 					tile = Spinner.get(i)[j];
 					if(tile.getTile().contains(e.getX(), e.getY())) {
-						System.out.println("Yey wow we found the tile " + Spinner.get(i)[j].id);
 						tile.changeColor(Color.WHITE);
-						//this.invalidate();
-						
-						//this.revalidate();
-						//this.repaint();
-						//this.rede
-						//this.setVisible(true);
-						////thirepaint();
-						//this.setVisible(false);
 						break;
 					}
-					//this.invalidate();
-					//>this.revalidate();
-					this.repaint();
-					this.repaint();
-					this.repaint();
-					//this.doLayout();
-				
+					this.repaint();	
 				}
 			}
 		}
