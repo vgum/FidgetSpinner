@@ -1,10 +1,14 @@
 
+package src;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+
+import javax.swing.*;
 
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
