@@ -69,7 +69,7 @@ public class Matrix extends JPanel implements MouseListener {
 				for(int j = 0; j < nRows; j++) {
 					tile = Spinner.get(i)[j];
 					if(tile.getTile().contains(e.getX(), e.getY())) {
-						tile.changeColor(Color.GREEN);
+						tile.changeColor(MainWindow.cp.currentColor());
 						break;
 					}
 					this.repaint();

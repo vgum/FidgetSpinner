@@ -1,4 +1,4 @@
-package src;
+
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -83,9 +83,6 @@ public class MainWindow {
 
 		
 		window.setVisible(true);
-
-		Runnable r = new repaintThread(panel);
-		//new Thread(r).start();
 	}
 
 
