@@ -19,7 +19,7 @@ public class MainWindow {
 	public static JPanel panel;
 	public static GridBagLayout gLayout;
 	public static GridBagConstraints conStraints;
-	private static Matrix matrix;
+	public static Matrix FS;
 	public static ColorPicker cp;
 	
 	public static void main(String[] args) {
@@ -38,38 +38,39 @@ public class MainWindow {
 		/////////// COLUMN 1 /////////////////
 		conStraints = new GridBagConstraints();
 		conStraints.anchor = GridBagConstraints.NORTHWEST;
-		conStraints.fill = GridBagConstraints.VERTICAL;
+		conStraints.fill = GridBagConstraints.HORIZONTAL;
 		
 		conStraints.weightx = 0.3;
 		conStraints.weighty = 0.3;
 		
-		b1= new JButton("Spinner 1");
+		b1= new JButton("Run");
 		conStraints.gridx = 0;
 		conStraints.gridy = 0;
 		panel.add(b1, conStraints);
 		
-		b2 = new JButton("Spinner 2");
+		b2 = new JButton("Clear");
+		b2.addActionListener(new ClearActionListener());
 		conStraints.gridx = 0;
 		conStraints.gridy = 1;
 		panel.add(b2, conStraints);
 	
-		b3 = new JButton("Spinner 3");
+		b3 = new JButton("Save");
 		conStraints.gridx = 0;
 		conStraints.gridy = 2;
 		panel.add(b3, conStraints);
 		System.out.println(MainWindow.b3);
-
-		////////// COLUMN 2 /////////////////
-		//conStraints.anchor = GridBagConstraints.NORTH;
-
+		
 		cp = new ColorPicker();
 		conStraints.gridx = 0;
         conStraints.gridy = 3;
 		panel.add(cp,conStraints);
 		System.out.println(MainWindow.cp);
+
+		////////// COLUMN 2 /////////////////
+		//conStraints.anchor = GridBagConstraints.NORTH;
 		
 		//Add spinner
-		Matrix FS = new Matrix(5);
+		FS = new Matrix(5);
 		conStraints.anchor = GridBagConstraints.CENTER;
 		conStraints.fill = GridBagConstraints.BOTH;
 		conStraints.gridx = 1;

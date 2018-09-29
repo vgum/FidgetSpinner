@@ -21,8 +21,8 @@ import java.util.HashMap;
 
 public class Matrix extends JPanel implements MouseListener {
 	
-	public HashMap<Integer, MatrixTile[]> Spinner;
-	private final int nRows;
+	public static HashMap<Integer, MatrixTile[]> Spinner;
+	public static int nRows;
 	private MatrixTile[] rows;
 	public Rectangle tile;
 
@@ -113,5 +113,5 @@ public class Matrix extends JPanel implements MouseListener {
 	public void mouseReleased(MouseEvent arg0) {
 		
 	}
-	
+
 }
