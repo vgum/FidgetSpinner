@@ -1,4 +1,4 @@
-package src;
+
 
 import javax.swing.JPanel;
 import java.awt.Graphics;
