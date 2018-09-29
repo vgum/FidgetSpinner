@@ -1,22 +1,12 @@
+package src;
 
-import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JPanel;
-
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
-import java.awt.Stroke;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.geom.Ellipse2D;
-import java.awt.geom.Line2D;
-import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
 import java.util.HashMap;
 
 public class Matrix extends JPanel implements MouseListener {
@@ -24,7 +14,6 @@ public class Matrix extends JPanel implements MouseListener {
 	public static HashMap<Integer, MatrixTile[]> Spinner;
 	public static int nRows;
 	private MatrixTile[] rows;
-	public Rectangle tile;
 
 	public Matrix(int nRows) {
 		this.nRows = nRows;
@@ -93,25 +82,22 @@ public class Matrix extends JPanel implements MouseListener {
 
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
-		
-		
+
 	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
-		
-		
+
 	}
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
-		
-		
+
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
-		
+
 	}
 
 }
