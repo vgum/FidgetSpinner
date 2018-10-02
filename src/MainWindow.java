@@ -18,6 +18,7 @@ public class MainWindow {
 	public static JPanel panel;
 	public static GridBagLayout gLayout;
 	public static GridBagConstraints conStraints;
+	public static ColorPicker cp;
 	private static JButton BtnAdd = new JButton("Add");
 	private static JButton BtnClr = new JButton("Clear");
 	private static JButton BtnSpin = new JButton("Spin");
