@@ -19,7 +19,11 @@ public class MainWindow {
 	public static JPanel panel;
 	public static GridBagLayout gLayout;
 	public static GridBagConstraints conStraints;
+<<<<<<< HEAD
 	public static Matrix FS;
+=======
+	private static Matrix matrix;
+>>>>>>> parent of baafd9a... New layout
 	public static ColorPicker cp;
 	
 	public static void main(String[] args) {
@@ -38,39 +42,68 @@ public class MainWindow {
 		/////////// COLUMN 1 /////////////////
 		conStraints = new GridBagConstraints();
 		conStraints.anchor = GridBagConstraints.NORTHWEST;
+<<<<<<< HEAD
 		conStraints.fill = GridBagConstraints.HORIZONTAL;
+=======
+		conStraints.fill = GridBagConstraints.VERTICAL;
+>>>>>>> parent of baafd9a... New layout
 		
 		conStraints.weightx = 0.3;
 		conStraints.weighty = 0.3;
 		
+<<<<<<< HEAD
 		b1= new JButton("Run");
+=======
+		b1= new JButton("Spinner 1");
+>>>>>>> parent of baafd9a... New layout
 		conStraints.gridx = 0;
 		conStraints.gridy = 0;
 		panel.add(b1, conStraints);
 		
+<<<<<<< HEAD
 		b2 = new JButton("Clear");
 		b2.addActionListener(new ClearActionListener());
+=======
+		b2 = new JButton("Spinner 2");
+>>>>>>> parent of baafd9a... New layout
 		conStraints.gridx = 0;
 		conStraints.gridy = 1;
 		panel.add(b2, conStraints);
 	
+<<<<<<< HEAD
 		b3 = new JButton("Save");
+=======
+		b3 = new JButton("Spinner 3");
+>>>>>>> parent of baafd9a... New layout
 		conStraints.gridx = 0;
 		conStraints.gridy = 2;
 		panel.add(b3, conStraints);
 		System.out.println(MainWindow.b3);
+<<<<<<< HEAD
 		
+=======
+
+		////////// COLUMN 2 /////////////////
+		//conStraints.anchor = GridBagConstraints.NORTH;
+
+>>>>>>> parent of baafd9a... New layout
 		cp = new ColorPicker();
 		conStraints.gridx = 0;
         conStraints.gridy = 3;
 		panel.add(cp,conStraints);
 		System.out.println(MainWindow.cp);
+<<<<<<< HEAD
 
 		////////// COLUMN 2 /////////////////
 		//conStraints.anchor = GridBagConstraints.NORTH;
 		
 		//Add spinner
 		FS = new Matrix(5);
+=======
+		
+		//Add spinner
+		Matrix FS = new Matrix(5);
+>>>>>>> parent of baafd9a... New layout
 		conStraints.anchor = GridBagConstraints.CENTER;
 		conStraints.fill = GridBagConstraints.BOTH;
 		conStraints.gridx = 1;
