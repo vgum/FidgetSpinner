@@ -1,4 +1,4 @@
-package src;
+
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -66,7 +66,7 @@ public class MainWindow {
 		Matrix FS = new Matrix(5);
 		conStraints.gridx = 1;
 		conStraints.gridy = 1;
-		panel.add(FS, conStraints);
+		panel.add(FS);
 		
 		window.setVisible(true);
 	}

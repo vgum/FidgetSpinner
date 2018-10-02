@@ -1,4 +1,3 @@
-package src;
 
 import javax.swing.JButton;
 import javax.swing.JComponent;
@@ -50,9 +49,7 @@ public class Matrix extends JPanel {
 	    //	}
 	    // }
 		 g.setColor(Color.BLUE);
-		 g.fillRect(0, 0, 100, 30);
-		 g.setColor(Color.GREEN);
-		 g.fillRect(100, 0, 100, 30);
+		 g.fillRect(0, 0, 100, 100);
 		 
 	  }
 
