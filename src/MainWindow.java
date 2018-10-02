@@ -21,6 +21,7 @@ public class MainWindow {
 	private static JPanel sidebar = new JPanel(new GridLayout(10, 1));
 	private static JPanel fidgetArea = new JPanel(new GridBagLayout());
 	private static JPanel editArea = new JPanel(new GridLayout(1, 4));
+	public static Matrix FS;
 
 	public static void main(String[] args) {
 
@@ -29,6 +30,7 @@ public class MainWindow {
 		window.setTitle("Fidget Spinner Maker");
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.getContentPane().setBackground(Color.BLACK);
+		BtnClr.addActionListener(new ClearActionListener());
 
 		panel = new JPanel();
 		panel.setBackground(Color.WHITE);
@@ -55,7 +57,7 @@ public class MainWindow {
 		conStraints.anchor = GridBagConstraints.CENTER;
 
 		//Add spinner
-		Matrix FS = new Matrix(6);
+		FS = new Matrix(6);
 		conStraints.anchor = GridBagConstraints.CENTER;
 		conStraints.fill = GridBagConstraints.BOTH;
 		conStraints.gridx = 2;
