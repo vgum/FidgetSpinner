@@ -26,6 +26,21 @@ public class MainWindow {
 >>>>>>> parent of baafd9a... New layout
 	public static ColorPicker cp;
 	
+=======
+
+	private static JButton BtnAdd = new JButton("Add");
+	private static JButton BtnClr = new JButton("Clear");
+	private static JButton BtnSpin = new JButton("Spin");
+	private static JButton BtnS1 = new JButton("Spinner 1");
+	private static JButton BtnS2 = new JButton("Spinner 2");
+	private static JButton BtnS3 = new JButton("Spinner 3");
+	private static JButton BtnS4 = new JButton("Spinner 4");
+	private static JPanel sidebar = new JPanel(new GridLayout(10, 1));
+	private static JPanel fidgetArea = new JPanel(new GridBagLayout());
+	private static JPanel editArea = new JPanel(new GridLayout(1, 4));
+	public static Matrix FS;
+
+>>>>>>> new-layout
 	public static void main(String[] args) {
 		
 		window = new JFrame();
@@ -34,6 +49,8 @@ public class MainWindow {
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.getContentPane().setBackground(Color.BLACK);
 		
+		BtnClr.addActionListener(new ClearActionListener());
+
 		panel = new JPanel();
 		panel.setLayout(gLayout = new GridBagLayout());
 		panel.setBackground(Color.WHITE);
@@ -104,6 +121,7 @@ public class MainWindow {
 		//Add spinner
 		Matrix FS = new Matrix(5);
 >>>>>>> parent of baafd9a... New layout
+		FS = new Matrix(6);
 		conStraints.anchor = GridBagConstraints.CENTER;
 		conStraints.fill = GridBagConstraints.BOTH;
 		conStraints.gridx = 1;
