@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of baafd9a... New layout
-
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
