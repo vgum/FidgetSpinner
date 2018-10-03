@@ -22,8 +22,10 @@ public class Matrix extends JPanel implements MouseListener {
 	
 	public static HashMap<Integer, MatrixTile[]> Spinner;
 	public static int nRows;
-	private MatrixTile[] rows;
 	public Rectangle tile;
+	public static boolean rotate = false;
+	
+	private MatrixTile[] rows;
 
 	public Matrix(int nRows) {
 		this.nRows = nRows;
@@ -57,7 +59,15 @@ public class Matrix extends JPanel implements MouseListener {
 	    		g2.draw(tile);
 	    	}
 	     }
+		 if(rotate) {
+			 g2.translate(300, 200);
+			 g2.rotate(45);
+		 }
 	  }
+	
+	public boolean getRotate() {
+		return rotate;
+	}
 
 	@Override
 	

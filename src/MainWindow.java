@@ -11,7 +11,7 @@ public class MainWindow {
 	public static GridBagConstraints conStraints;
 	public static ColorPicker cp;
 	public static Matrix FS;
-
+	
 	private static JButton BtnAdd = new JButton("Add");
 	private static JButton BtnClr = new JButton("Clear");
 	private static JButton BtnSpin = new JButton("Spin");
@@ -22,6 +22,7 @@ public class MainWindow {
 	private static JPanel sidebar = new JPanel(new GridLayout(10, 1));
 	private static JPanel fidgetArea = new JPanel(new GridBagLayout());
 	private static JPanel editArea = new JPanel(new GridLayout(1, 4));
+	
 
 	public static void main(String[] args) {
 
@@ -31,6 +32,7 @@ public class MainWindow {
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.getContentPane().setBackground(Color.BLACK);
 		BtnClr.addActionListener(new ClearActionListener());
+		BtnSpin.addActionListener(new RotateActionListener());
 
 		panel = new JPanel();
 		panel.setBackground(Color.WHITE);
@@ -71,7 +73,5 @@ public class MainWindow {
 		window.setVisible(true);
 
 	}
-
-
 }
 	
