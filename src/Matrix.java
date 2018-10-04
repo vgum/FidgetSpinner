@@ -1,23 +1,14 @@
-import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JPanel;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
-import java.awt.Stroke;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.geom.Ellipse2D;
-import java.awt.geom.Line2D;
-import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
 import java.util.HashMap;
 
+@SuppressWarnings("serial")
 public class Matrix extends JPanel implements MouseListener {
 	
 	public static HashMap<Integer, MatrixTile[]> Spinner;
@@ -28,7 +19,7 @@ public class Matrix extends JPanel implements MouseListener {
 	private MatrixTile[] rows;
 
 	public Matrix(int nRows) {
-		this.nRows = nRows;
+		Matrix.nRows = nRows;
 		Spinner = new HashMap<Integer, MatrixTile[]>();
 		int id = 0;
 		for (int i = 0; i < nRows; i ++) {
@@ -56,13 +47,14 @@ public class Matrix extends JPanel implements MouseListener {
 	    		g2.setColor(rows[j].getColor());
 	    		g2.fillRect(tile.x+1, tile.y+1, tile.width-1, tile.height-1);
 	    		g2.setColor(Color.BLACK);
+	    		if(rotate) {
+	   			 //g2.translate(648/2, 480/2);
+	   			 g2.translate(0, 0);
+	   			 g2.rotate(45* Math.PI/180);
+	   		 	}
 	    		g2.draw(tile);
 	    	}
 	     }
-		 if(rotate) {
-			 g2.translate(300, 200);
-			 g2.rotate(45);
-		 }
 	  }
 	
 	public boolean getRotate() {
