@@ -2,13 +2,11 @@ package src;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.Serializable;
 
+public class SetMatrixActionListener implements ActionListener {
 
-public class SetMatrixActionListener implements ActionListener, Serializable {
-
-    static Integer oldMatrix = 0;
-    Integer newMatrix;
+    static Integer currentMatrix = 0;
+    private Integer newMatrix;
 
 
     public SetMatrixActionListener(Integer i){
@@ -23,8 +21,8 @@ public class SetMatrixActionListener implements ActionListener, Serializable {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-       Main.mainWindow.drawMatrix(Main.mainWindow.matrixHolder.matrixList.get(oldMatrix), Main.mainWindow.matrixHolder.matrixList.get(newMatrix));
-       oldMatrix = this.newMatrix;
+       Main.mainWindow.drawMatrix(Main.mainWindow.matrixHolder.matrixList.get(currentMatrix), Main.mainWindow.matrixHolder.matrixList.get(newMatrix));
+       currentMatrix = this.newMatrix;
     }
 
 }

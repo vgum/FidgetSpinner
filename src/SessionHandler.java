@@ -2,7 +2,7 @@ package src;
 
 import java.io.*;
 
-public class SessionHandler implements Serializable {
+public class SessionHandler {
 
     private static final String filepath="./save/spinners.txt";
 

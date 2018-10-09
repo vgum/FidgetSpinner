@@ -1,13 +1,10 @@
 package src;
 
-import java.io.PrintStream;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MatrixHolder extends ArrayList implements Serializable {
+public class MatrixHolder extends ArrayList {
 
-    public String holderName;
     public int currentSpinner;
     private static final long serialVersionUID = 1L;
     public ArrayList<Matrix> matrixList;
@@ -35,11 +32,6 @@ public class MatrixHolder extends ArrayList implements Serializable {
             System.out.println("Old Spinners is null...");
             createNewMatrix();
         }
-
-    }
-
-    public void addMatrix(Matrix m){
-        matrixList.add(m);
 
     }
 

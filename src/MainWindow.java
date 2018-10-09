@@ -3,24 +3,18 @@ package src;
 import javax.swing.*;
 
 import java.awt.*;
-import java.io.Serializable;
 
-public class MainWindow implements Serializable {
+public class MainWindow {
 
 	public  JFrame window;
 	public  GridBagConstraints conStraints;
 	public  ColorPicker cp;
-	public  Matrix FS;
 	public  MatrixHolder matrixHolder;
 
-	public  JButton BtnSave;
+	private  JButton BtnSave;
 	private  JButton BtnClr;
 	private  JButton BtnSpin;
 	public  JPanel fidgetArea;
-	Matrix M1;
-	Matrix M2;
-	Matrix M3;
-	Matrix M4;
 
 	public MainWindow(){
 

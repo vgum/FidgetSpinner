@@ -2,13 +2,12 @@ package src;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import static src.Main.sessionHandler;
 
-public class SaveActionListener implements ActionListener, Serializable {
+public class SaveActionListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {

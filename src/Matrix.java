@@ -8,10 +8,9 @@ import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.Color;
-import java.io.Serializable;
 import java.util.HashMap;
 
-public class Matrix extends JPanel implements MouseListener, Serializable {
+public class Matrix extends JPanel implements MouseListener {
 	
 	public HashMap<Integer, MatrixTile[]> Spinner;
 	public int nRows;
@@ -45,15 +44,11 @@ public class Matrix extends JPanel implements MouseListener, Serializable {
 	}
 
 
-	public int getRows(){
-		return nRows;
-	}
-	
 	protected void paintComponent(Graphics g) {
 		 super.paintComponent(g);
 		 Graphics2D g2 = (Graphics2D) g;
 		 Rectangle tile = null;
-		 for(int i = 0; i < nRows; i++) {			 
+		 for(int i = 0; i < nRows; i++) {
 	    	rows = (MatrixTile[]) Spinner.get(i);
 	    	for (int j = 0; j < rows.length; j++) {
 	    		tile = rows[j].getTile();
@@ -113,19 +108,16 @@ public class Matrix extends JPanel implements MouseListener, Serializable {
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
 		
-		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
-		
-		
+
 	}
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
-		
-		
+
 	}
 
 	@Override
