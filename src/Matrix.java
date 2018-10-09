@@ -1,35 +1,29 @@
-import javax.swing.JButton;
-import javax.swing.JComponent;
+package src;
+
 import javax.swing.JPanel;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
-import java.awt.Stroke;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.geom.Ellipse2D;
-import java.awt.geom.Line2D;
-import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Matrix extends JPanel implements MouseListener {
+public class Matrix extends JPanel implements MouseListener, Serializable {
 	
-	public static HashMap<Integer, MatrixTile[]> Spinner;
-	public static int nRows;
-	public Rectangle tile;
-	public static boolean rotate = false;
+	public HashMap<Integer, MatrixTile[]> Spinner;
+	public int nRows;
+	public boolean rotate = false;
+	public String matrixName;
 	
 	private MatrixTile[] rows;
 
 	public Matrix(int nRows) {
+		this.matrixName = "I am a Matrix 4";
 		this.nRows = nRows;
-		Spinner = new HashMap<Integer, MatrixTile[]>();
+		this.Spinner = new HashMap<Integer, MatrixTile[]>();
 		int id = 0;
 		for (int i = 0; i < nRows; i ++) {
 			MatrixTile[] row = new MatrixTile[nRows];
@@ -37,10 +31,22 @@ public class Matrix extends JPanel implements MouseListener {
 				row[j] = new MatrixTile(id);
 				id++;
 			}
-			Spinner.put(i, row);
+			this.Spinner.put(i, row);
 		}
 		addMouseListener(this);
-		
+
+	}
+
+	public Matrix(HashMap<Integer, MatrixTile[]> s) {
+		this.nRows = s.get(0).length;
+		this.Spinner = s;
+		addMouseListener(this);
+
+	}
+
+
+	public int getRows(){
+		return nRows;
 	}
 	
 	protected void paintComponent(Graphics g) {
@@ -70,27 +76,31 @@ public class Matrix extends JPanel implements MouseListener {
 	}
 
 	@Override
-	
+
 	public void mouseClicked(MouseEvent e) {
 		if(e.getButton() == MouseEvent.BUTTON1) {
+
 			MatrixTile tile;
 			for(int i = 0; i < nRows; i++)  {
 				for(int j = 0; j < nRows; j++) {
 					tile = Spinner.get(i)[j];
 					if(tile.getTile().contains(e.getX(), e.getY())) {
-						tile.changeColor(MainWindow.cp.currentColor());
+
+						tile.changeColor(Main.mainWindow.cp.currentColor());
 						break;
 					}
 					this.repaint();
 				}
 			}
 		}	
-		if(e.getButton() == MouseEvent.BUTTON3) {
+		else if(e.getButton() == MouseEvent.BUTTON3) {
+
 			MatrixTile tile;
 			for(int i = 0; i < nRows; i++)  {
 				for(int j = 0; j < nRows; j++) {
 					tile = Spinner.get(i)[j];
 					if(tile.getTile().contains(e.getX(), e.getY())) {
+
 						tile.changeColor(Color.WHITE);
 						break;
 					}
