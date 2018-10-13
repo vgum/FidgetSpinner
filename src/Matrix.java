@@ -49,12 +49,16 @@ public class Matrix extends JPanel implements MouseListener {
 
 	public Matrix(int nRows) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		Matrix.nRows = nRows;
 		Spinner = new HashMap<Integer, MatrixTile[]>();
 =======
 		this.ra = 0.0;
+=======
+		this.ra = 70.0;
+>>>>>>> parent of a7e9fdf... Tidy up file read messages and random prints
 		this.setBorder(new EmptyBorder(100, 100, 100, 100));
-		this.matrixName = "MatrixName";
+		this.matrixName = "I am a Matrix 4";
 		this.nRows = nRows;
 		this.Spinner = new HashMap<Integer, MatrixTile[]>();
 >>>>>>> a7e9fdf533ede45946aa396d24d652b87619cdba
@@ -174,7 +178,7 @@ public class Matrix extends JPanel implements MouseListener {
 	@Override
 
 	public void mouseClicked(MouseEvent e) {
-		//System.out.println("Clicked");
+		System.out.println("Clicked");
 		Integer xPos = e.getX()-offsetX;
 		Integer yPos = e.getY()-offsetY;
 
@@ -189,7 +193,7 @@ public class Matrix extends JPanel implements MouseListener {
 					if(tile.getTile().contains(xPos, yPos)) {
 						//System.out.println("Contains");
 						if (tile.getColor()==Main.mainWindow.cp.currentColor()) {
-							//System.out.println("Same color");
+							System.out.println("Same color");
 							Random rand = new Random();
 							float r = rand.nextFloat() / 2f + 0.5f;
 							float g = rand.nextFloat() / 2f + 0.5f;

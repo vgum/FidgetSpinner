@@ -163,7 +163,7 @@ public class MainWindow {
 				}
 				Main.mainWindow.window.repaint();
 				m.repaint();
-				//System.out.println("Repainting with angle: " + m.ra);
+				System.out.println("Repainting with angle: " + m.ra);
 			}
 			else {
 				try {

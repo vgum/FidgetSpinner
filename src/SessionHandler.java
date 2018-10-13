@@ -19,10 +19,10 @@ public class SessionHandler {
             ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
             objectOut.writeObject(serObj);
             objectOut.close();
-            System.out.println("Saved all spinners");
+            System.out.println("The Object  was succesfully written to a file");
 
         } catch (Exception ex) {
-            //ex.printStackTrace();
+            ex.printStackTrace();
         }
     }
 
@@ -35,13 +35,13 @@ public class SessionHandler {
 
             Object obj = objectIn.readObject();
 
-            System.out.println("Saved spinners has been loaded");
+            System.out.println("Saved spinners has been read from the file");
             objectIn.close();
             return obj;
 
         } catch (Exception ex) {
-            System.out.println("Did not find the file: " + filepath);
-            //ex.printStackTrace();
+            System.out.println("Did not find the file...");
+            ex.printStackTrace();
             return null;
         }
     }
