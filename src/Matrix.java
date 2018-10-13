@@ -51,10 +51,14 @@ public class Matrix extends JPanel implements MouseListener {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		Matrix.nRows = nRows;
 		Spinner = new HashMap<Integer, MatrixTile[]>();
 =======
 		this.ra = 0.0;
+=======
+		this.ra = 70.0;
+>>>>>>> parent of a7e9fdf... Tidy up file read messages and random prints
 =======
 		this.ra = 70.0;
 >>>>>>> parent of a7e9fdf... Tidy up file read messages and random prints

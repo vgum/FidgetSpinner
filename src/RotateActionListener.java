@@ -88,8 +88,12 @@ public class RotateActionListener implements ActionListener, Runnable {
 //			}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 >>>>>>> a7e9fdf533ede45946aa396d24d652b87619cdba
+=======
+			System.out.println("Rotate status is " + m.rotate);
+>>>>>>> parent of a7e9fdf... Tidy up file read messages and random prints
 =======
 			System.out.println("Rotate status is " + m.rotate);
 >>>>>>> parent of a7e9fdf... Tidy up file read messages and random prints
