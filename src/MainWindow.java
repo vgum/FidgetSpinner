@@ -1,6 +1,8 @@
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 
 import java.awt.*;
 
@@ -9,12 +11,12 @@ public class MainWindow {
 	public static JFrame window;
 	public static JPanel panel;
 	public static GridBagConstraints conStraints;
-	public static ColorPicker cp;
+	public static ColorPicker cp = new ColorPicker();
 	public static Matrix FS;
 	
 	private static JButton BtnAdd = new JButton("Add");
 	private static JButton BtnClr = new JButton("Clear");
-	private static JButton BtnSpin = new JButton("Spin");
+	public static JButton BtnSpin = new JButton("Spin");
 	private static JButton BtnS1 = new JButton("Spinner 1");
 	private static JButton BtnS2 = new JButton("Spinner 2");
 	private static JButton BtnS3 = new JButton("Spinner 3");
@@ -42,7 +44,9 @@ public class MainWindow {
 		panel.add(sidebar, BorderLayout.WEST);
 		panel.add(fidgetArea, BorderLayout.CENTER);
 		panel.add(editArea, BorderLayout.SOUTH);
-
+		Border emptyBorder = BorderFactory.createEmptyBorder(80, 0, 0, 0);
+		
+		sidebar.setBorder(emptyBorder);
 		sidebar.add(BtnS1);
 		sidebar.add(BtnS2);
 		sidebar.add(BtnS3);
@@ -50,8 +54,6 @@ public class MainWindow {
 		editArea.add(BtnAdd);
 		editArea.add(BtnClr);
 		editArea.add(BtnSpin);
-
-		cp = new ColorPicker();
 		editArea.add(cp);
 
 		conStraints = new GridBagConstraints();

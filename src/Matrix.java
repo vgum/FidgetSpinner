@@ -1,12 +1,15 @@
 import javax.swing.JPanel;
+import java.awt.geom.AffineTransform;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.Shape;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.Color;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 @SuppressWarnings("serial")
 public class Matrix extends JPanel implements MouseListener {
@@ -15,6 +18,7 @@ public class Matrix extends JPanel implements MouseListener {
 	public static int nRows;
 	public Rectangle tile;
 	public static boolean rotate = false;
+	public static double degrees = 0.0;
 	
 	private MatrixTile[] rows;
 
@@ -35,6 +39,7 @@ public class Matrix extends JPanel implements MouseListener {
 	}
 	
 	protected void paintComponent(Graphics g) {
+		Color color;
 		 super.paintComponent(g);
 		 Graphics2D g2 = (Graphics2D) g;
 		 Rectangle tile = null;
@@ -44,15 +49,25 @@ public class Matrix extends JPanel implements MouseListener {
 	    		tile = rows[j].getTile();
 	    		tile.x = j * 40;
 	    		tile.y = i * 40;
-	    		g2.setColor(rows[j].getColor());
-	    		g2.fillRect(tile.x+1, tile.y+1, tile.width-1, tile.height-1);
-	    		g2.setColor(Color.BLACK);
-	    		if(rotate) {
-	   			 //g2.translate(648/2, 480/2);
-	   			 g2.translate(0, 0);
-	   			 g2.rotate(45* Math.PI/180);
-	   		 	}
-	    		g2.draw(tile);
+
+		    	g2.setColor(rows[j].getColor());
+		    	//g2.fillRect(tile.x+1, tile.y+1, tile.width-1, tile.height-1);
+		    	//Rectangle filling = new Rectangle(tile.x+1, tile.y+1, tile.width-1, tile.height-1);
+		    	if(rotate) {
+		    		Rectangle filling = new Rectangle(tile.x+1, tile.y+1, tile.width-1, tile.height-1);
+		    		AffineTransform tx = new AffineTransform();
+		    		tx.rotate(degrees);
+		    		Shape newShape = tx.createTransformedShape(filling);
+		    		g2.draw(newShape);
+		    		g2.setColor(Color.BLACK);
+		    		g2.draw(tile);
+		    	}
+		    	else {
+		    		System.out.println("From else");
+		    		g2.fillRect(tile.x+1, tile.y+1, tile.width-1, tile.height-1);
+		    		g2.setColor(Color.BLACK);
+		    		g2.draw(tile);
+		    	}
 	    	}
 	     }
 	  }
