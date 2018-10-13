@@ -129,9 +129,9 @@ public class Matrix extends JPanel implements MouseListener {
 						if (tile.getColor()==Main.mainWindow.cp.currentColor()) {
 							//System.out.println("Same color");
 							Random rand = new Random();
-							float r = rand.nextFloat() / 2f + 0.5f;
-							float g = rand.nextFloat() / 2f + 0.5f;
-							float b = rand.nextFloat() / 2f + 0.5f;
+							float r = rand.nextFloat() / 2f + 0.35f;
+							float g = rand.nextFloat() / 2f + 0.35f;
+							float b = rand.nextFloat() / 2f + 0.35f;
 							Color randomColor = new Color(r, g, b);
 							tile.changeColor(randomColor);
 						}
