@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.geom.AffineTransform;
 import java.util.HashMap;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class Matrix extends JPanel implements MouseListener {
@@ -43,7 +44,7 @@ public class Matrix extends JPanel implements MouseListener {
 	}
 
 	public void setRA(double angle) {
-		this.ra=this.ra + angle;
+		this.ra=(this.ra + angle)%360;
 	}
 
 	public Matrix(HashMap<Integer, MatrixTile[]> s) {
@@ -65,7 +66,7 @@ public class Matrix extends JPanel implements MouseListener {
 		//g2.rotate(Math.toRadians(10));
 		//draw shape/image (will be rotated)
 		//g2.setTransform(old);
-		double lambda = Math.sqrt(200*200+200*200)/2;
+		//double lambda = Math.sqrt(200*200+200*200)/2;
 		//AffineTransform old = g2.getTransform();
 		g2.translate(offsetX,offsetY);
 		//g2.rotate(Math.toRadians(45));
@@ -73,7 +74,7 @@ public class Matrix extends JPanel implements MouseListener {
 
 		//g2.translate(2*lambda*(Math.sin(Math.toRadians(this.ra-45))),-lambda*(Math.cos(Math.toRadians(this.ra))));
 		//System.out.println("Angle: " + this.ra+" X axis: " +lambda*(Math.sin(Math.toRadians(this.ra-45))) + " Y axis: " + -lambda*(Math.cos(Math.toRadians(this.ra))));
-		System.out.println("Lambda: " + lambda);
+		//System.out.println("Lambda: " + lambda);
 		//g2.rotate(Math.toRadians(this.ra));
 		//g2.rotate(Math.toRadians(45), rectangle.getX() + rectangle.width/2, rectangle.getY() + rectangle.height/2);
 		g2.rotate(Math.toRadians(this.ra), 100, 100);
@@ -112,6 +113,9 @@ public class Matrix extends JPanel implements MouseListener {
 
 	public void mouseClicked(MouseEvent e) {
 		System.out.println("Clicked");
+		Integer xPos = e.getX()-offsetX;
+		Integer yPos = e.getY()-offsetY;
+
 
 		if(e.getButton() == MouseEvent.BUTTON1) {
 			//System.out.println("Clicked left");
@@ -120,9 +124,20 @@ public class Matrix extends JPanel implements MouseListener {
 				for(int j = 0; j < nRows; j++) {
 					tile = Spinner.get(i)[j];
 					//System.out.println("Checking tiles" + e.getX() + ":" + e.getY());
-					if(tile.getTile().contains(e.getX()-offsetX, e.getY()-offsetY)) {
+					if(tile.getTile().contains(xPos, yPos)) {
 						//System.out.println("Contains");
-						tile.changeColor(Main.mainWindow.cp.currentColor());
+						if (tile.getColor()==Main.mainWindow.cp.currentColor()) {
+							System.out.println("Same color");
+							Random rand = new Random();
+							float r = rand.nextFloat() / 2f + 0.5f;
+							float g = rand.nextFloat() / 2f + 0.5f;
+							float b = rand.nextFloat() / 2f + 0.5f;
+							Color randomColor = new Color(r, g, b);
+							tile.changeColor(randomColor);
+						}
+						else {
+							tile.changeColor(Main.mainWindow.cp.currentColor());
+						}
 						break;
 					}
 					this.repaint();
@@ -135,7 +150,7 @@ public class Matrix extends JPanel implements MouseListener {
 			for(int i = 0; i < nRows; i++)  {
 				for(int j = 0; j < nRows; j++) {
 					tile = Spinner.get(i)[j];
-					if(tile.getTile().contains(e.getX(), e.getY())) {
+					if(tile.getTile().contains(xPos, yPos)) {
 
 						tile.changeColor(Color.WHITE);
 						break;

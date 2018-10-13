@@ -109,11 +109,11 @@ public class MainWindow implements Runnable{
 		while (true) {
 			Integer i = SetMatrixActionListener.currentMatrix;
 			Matrix m = this.matrixHolder.matrixList.get(i);
-			System.out.println("Rotate boolean is : " + i);
+			//System.out.println("Rotate boolean is : " + i);
 			if (m.rotate) {
 				try {
 					m.setRA(5.0);
-					Thread.sleep(40);
+					Thread.sleep(15);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -127,7 +127,7 @@ public class MainWindow implements Runnable{
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				System.out.println("Not rotating");
+				//System.out.println("Not rotating");
 			}
 
 		}
