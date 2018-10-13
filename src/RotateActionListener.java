@@ -75,12 +75,10 @@ public class RotateActionListener implements ActionListener, Runnable {
 			m.rotate = !m.rotate;
 			if (m.rotate) {
 				Main.mainWindow.BtnSpin.setText("Stop");
-				System.out.println("Starting spin");
 			}
 			else {
 				m.ra = 0.0;
 				Main.mainWindow.BtnSpin.setText("Spin");
-				System.out.println("Stopping spin");
 			}
 //			if(m.rotate){
 //				Main.mainWindow.t1.start();
@@ -89,8 +87,12 @@ public class RotateActionListener implements ActionListener, Runnable {
 //				Main.mainWindow.t1.pause();
 //			}
 
+<<<<<<< HEAD
 
 >>>>>>> a7e9fdf533ede45946aa396d24d652b87619cdba
+=======
+			System.out.println("Rotate status is " + m.rotate);
+>>>>>>> parent of a7e9fdf... Tidy up file read messages and random prints
 	}
 
 }
