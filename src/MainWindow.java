@@ -3,8 +3,11 @@ package src;
 import javax.swing.*;
 
 import java.awt.*;
+import java.util.concurrent.TimeUnit;
 
-public class MainWindow {
+import static src.Main.t1;
+
+public class MainWindow implements Runnable{
 
 	public  JFrame window;
 	public  GridBagConstraints conStraints;
@@ -13,8 +16,9 @@ public class MainWindow {
 
 	private  JButton BtnSave;
 	private  JButton BtnClr;
-	private  JButton BtnSpin;
+	public  JButton BtnSpin;
 	public  JPanel fidgetArea;
+
 
 	public MainWindow(){
 
@@ -36,6 +40,8 @@ public class MainWindow {
 
 		this.matrixHolder = new MatrixHolder();
 
+
+
 		this.window = new JFrame();
 		window.setSize(648,480);
 		window.setTitle("Fidget Spinner Maker");
@@ -56,6 +62,7 @@ public class MainWindow {
 
 		panel.setLayout(new BorderLayout());
 		panel.add(sidebar, BorderLayout.WEST);
+		fidgetArea.setBorder(BorderFactory.createLineBorder(Color.black));
 		panel.add(fidgetArea, BorderLayout.CENTER);
 		panel.add(editArea, BorderLayout.SOUTH);
 
@@ -75,11 +82,13 @@ public class MainWindow {
 		window.add(panel);
 		window.setVisible(true);
 
+
+
 	}
 
 	public void drawMatrix(Matrix o, Matrix n){
 		this.conStraints = new GridBagConstraints();
-		this.conStraints.insets = new Insets(80,150,80,80);
+		this.conStraints.insets = new Insets(0,0,0,0);
 		this.conStraints.anchor = GridBagConstraints.CENTER;
 		this.fidgetArea.remove(o);
 		this.conStraints.anchor = GridBagConstraints.CENTER;
@@ -89,9 +98,39 @@ public class MainWindow {
 		this.conStraints.gridheight = 1;
 		this.conStraints.weightx = 1;
 		this.conStraints.weighty = 1;
+		//n.setBorder(BorderFactory.createLineBorder(Color.red));
 		this.fidgetArea.add(n, this.conStraints);
 		window.revalidate();
 		window.repaint();
+	}
+
+	@Override
+	public void run() {
+		while (true) {
+			Integer i = SetMatrixActionListener.currentMatrix;
+			Matrix m = this.matrixHolder.matrixList.get(i);
+			System.out.println("Rotate boolean is : " + i);
+			if (m.rotate) {
+				try {
+					m.setRA(5.0);
+					Thread.sleep(40);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				Main.mainWindow.window.repaint();
+				m.repaint();
+				System.out.println("Repainting with angle: " + m.ra);
+			}
+			else {
+				try {
+					TimeUnit.SECONDS.sleep(1);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				System.out.println("Not rotating");
+			}
+
+		}
 	}
 }
 	
