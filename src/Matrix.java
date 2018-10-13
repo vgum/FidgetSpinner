@@ -25,9 +25,9 @@ public class Matrix extends JPanel implements MouseListener {
 	private MatrixTile[] rows;
 
 	public Matrix(int nRows) {
-		this.ra = 70.0;
+		this.ra = 0.0;
 		this.setBorder(new EmptyBorder(100, 100, 100, 100));
-		this.matrixName = "I am a Matrix 4";
+		this.matrixName = "MatrixName";
 		this.nRows = nRows;
 		this.Spinner = new HashMap<Integer, MatrixTile[]>();
 		int id = 0;
@@ -112,7 +112,7 @@ public class Matrix extends JPanel implements MouseListener {
 	@Override
 
 	public void mouseClicked(MouseEvent e) {
-		System.out.println("Clicked");
+		//System.out.println("Clicked");
 		Integer xPos = e.getX()-offsetX;
 		Integer yPos = e.getY()-offsetY;
 
@@ -127,7 +127,7 @@ public class Matrix extends JPanel implements MouseListener {
 					if(tile.getTile().contains(xPos, yPos)) {
 						//System.out.println("Contains");
 						if (tile.getColor()==Main.mainWindow.cp.currentColor()) {
-							System.out.println("Same color");
+							//System.out.println("Same color");
 							Random rand = new Random();
 							float r = rand.nextFloat() / 2f + 0.5f;
 							float g = rand.nextFloat() / 2f + 0.5f;

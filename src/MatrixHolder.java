@@ -29,14 +29,14 @@ public class MatrixHolder extends ArrayList {
 
         }
         if(savedSpinners==null){
-            System.out.println("Old Spinners is null...");
+            System.out.println("There is no saved spinners available");
             createNewMatrix();
         }
 
     }
 
     public void createNewMatrix() {
-        System.out.println("Did not find any valid save data, creating new spinners...");
+        System.out.println("Creating new spinners...");
         this.matrixList.add(new Matrix(5));
         this.matrixList.add(new Matrix(5));
         this.matrixList.add(new Matrix(5));

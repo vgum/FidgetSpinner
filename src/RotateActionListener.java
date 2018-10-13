@@ -12,10 +12,12 @@ public class RotateActionListener implements ActionListener {
 			m.rotate = !m.rotate;
 			if (m.rotate) {
 				Main.mainWindow.BtnSpin.setText("Stop");
+				System.out.println("Starting spin");
 			}
 			else {
 				m.ra = 0.0;
 				Main.mainWindow.BtnSpin.setText("Spin");
+				System.out.println("Stopping spin");
 			}
 //			if(m.rotate){
 //				Main.mainWindow.t1.start();
@@ -24,7 +26,7 @@ public class RotateActionListener implements ActionListener {
 //				Main.mainWindow.t1.pause();
 //			}
 
-			System.out.println("Rotate status is " + m.rotate);
+
 	}
 
 }
