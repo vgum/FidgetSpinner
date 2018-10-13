@@ -1,11 +1,17 @@
+<<<<<<< HEAD
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
+=======
+package src;
+
+>>>>>>> a7e9fdf533ede45946aa396d24d652b87619cdba
 
 import java.awt.*;
 
+<<<<<<< HEAD
 public class MainWindow {
 
 	public static JFrame window;
@@ -29,6 +35,8 @@ public class MainWindow {
 	public static void main(String[] args) {
 
 		window = new JFrame();
+=======
+>>>>>>> a7e9fdf533ede45946aa396d24d652b87619cdba
 		window.setSize(648,480);
 		window.setTitle("Fidget Spinner Maker");
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -51,25 +59,21 @@ public class MainWindow {
 		sidebar.add(BtnS2);
 		sidebar.add(BtnS3);
 		sidebar.add(BtnS4);
-		editArea.add(BtnAdd);
 		editArea.add(BtnClr);
 		editArea.add(BtnSpin);
+<<<<<<< HEAD
 		editArea.add(cp);
 
 		conStraints = new GridBagConstraints();
 		conStraints.insets = new Insets(80,150,80,80);
 		conStraints.anchor = GridBagConstraints.CENTER;
+=======
 
-		//Add spinner
-		FS = new Matrix(6);
-		conStraints.anchor = GridBagConstraints.CENTER;
-		conStraints.fill = GridBagConstraints.BOTH;
-		conStraints.gridx = 2;
-		conStraints.gridy = 2;
-		conStraints.gridheight = 1;
-		conStraints.weightx = 1;
-		conStraints.weighty = 1;
-		fidgetArea.add(FS, conStraints);
+		this.cp = new ColorPicker();
+		editArea.add(this.cp);
+>>>>>>> a7e9fdf533ede45946aa396d24d652b87619cdba
+
+		drawMatrix(this.matrixHolder.matrixList.get(1), this.matrixHolder.matrixList.get(0));
 
 		window.add(panel);
 		window.setVisible(true);
