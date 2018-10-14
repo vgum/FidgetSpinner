@@ -17,9 +17,6 @@ public class SaveActionListener implements ActionListener {
         for (Matrix m : Main.mainWindow.matrixHolder.matrixList) {
             HashMap<Integer, MatrixTile[]> tempSpinner = m.Spinner;
             spinnerList.add(tempSpinner);
-       for (Matrix m : Main.mainWindow.matrixHolder.matrixList) {
-                HashMap<Integer, MatrixTile[]> tempSpinner = m.Spinner;
-                spinnerList.add(tempSpinner);
         }
 
         sessionHandler.WriteObjectToFile(spinnerList);
