@@ -34,6 +34,18 @@ public class MainWindow implements Runnable{
 		JPanel sidebar = new JPanel(new GridLayout(10, 1));
 		this.fidgetArea = new JPanel(new GridBagLayout());
 		JPanel editArea = new JPanel(new GridLayout(1, 4));
+		  JPanel panel;
+
+		  this.BtnSave = new JButton("Save");
+		  this.BtnClr = new JButton("Clear");
+		  this.BtnSpin = new JButton("Spin");
+		  JButton BtnS1 = new JButton("Spinner 1");
+		  JButton BtnS2 = new JButton("Spinner 2");
+		  JButton BtnS3 = new JButton("Spinner 3");
+		  JButton BtnS4 = new JButton("Spinner 4");
+		  JPanel sidebar = new JPanel(new GridLayout(10, 1));
+		  this.fidgetArea = new JPanel(new GridBagLayout());
+		  JPanel editArea = new JPanel(new GridLayout(1, 4));
 
 
 
