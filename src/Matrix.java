@@ -12,7 +12,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class Matrix extends JPanel implements MouseListener {
-	
+
 	public HashMap<Integer, MatrixTile[]> Spinner;
 	public int nRows;
 	public boolean rotate = false;
@@ -21,7 +21,7 @@ public class Matrix extends JPanel implements MouseListener {
 	public Graphics2D g2;
 	private Integer offsetX = 150;
 	private Integer offsetY = 75;
-	
+
 	private MatrixTile[] rows;
 
 	public Matrix(int nRows) {
@@ -59,9 +59,9 @@ public class Matrix extends JPanel implements MouseListener {
 	protected void paintComponent(Graphics g) {
 		Integer lap = 0;
 		//while (lap<20) {
-		 super.paintComponent(g);
-		 this.g2 = (Graphics2D) g;
-		 Rectangle tile = null;
+		super.paintComponent(g);
+		this.g2 = (Graphics2D) g;
+		Rectangle tile = null;
 		AffineTransform old = g2.getTransform();
 		//g2.rotate(Math.toRadians(10));
 		//draw shape/image (will be rotated)
@@ -84,27 +84,27 @@ public class Matrix extends JPanel implements MouseListener {
 
 		//Graphics2D g2 = (Graphics2D) g;
 
-			for (int i = 0; i < nRows; i++) {
-				rows = (MatrixTile[]) Spinner.get(i);
-				for (int j = 0; j < rows.length; j++) {
-					tile = rows[j].getTile();
-					tile.x = j * 40;
-					tile.y = i * 40;
-					g2.setColor(rows[j].getColor());
-					g2.fillRect(tile.x + 1, tile.y + 1, tile.width - 1, tile.height - 1);
-					g2.setColor(Color.BLACK);
-					g2.draw(tile);
+		for (int i = 0; i < nRows; i++) {
+			rows = (MatrixTile[]) Spinner.get(i);
+			for (int j = 0; j < rows.length; j++) {
+				tile = rows[j].getTile();
+				tile.x = j * 40;
+				tile.y = i * 40;
+				g2.setColor(rows[j].getColor());
+				g2.fillRect(tile.x + 1, tile.y + 1, tile.width - 1, tile.height - 1);
+				g2.setColor(Color.BLACK);
+				g2.draw(tile);
 
-				}
 			}
+		}
 
-			//ra += 10;
-			//lap++;
-			g2.setTransform(old);
+		//ra += 10;
+		//lap++;
+		g2.setTransform(old);
 		//}
 
-	  }
-	
+	}
+
 	public boolean getRotate() {
 		return rotate;
 	}
@@ -129,9 +129,9 @@ public class Matrix extends JPanel implements MouseListener {
 						if (tile.getColor()==Main.mainWindow.cp.currentColor()) {
 							//System.out.println("Same color");
 							Random rand = new Random();
-							float r = rand.nextFloat() / 2f + 0.35f;
-							float g = rand.nextFloat() / 2f + 0.35f;
-							float b = rand.nextFloat() / 2f + 0.35f;
+							float r = rand.nextFloat() / 2f + 0.5f;
+							float g = rand.nextFloat() / 2f + 0.5f;
+							float b = rand.nextFloat() / 2f + 0.5f;
 							Color randomColor = new Color(r, g, b);
 							tile.changeColor(randomColor);
 						}
@@ -143,7 +143,7 @@ public class Matrix extends JPanel implements MouseListener {
 					this.repaint();
 				}
 			}
-		}	
+		}
 		else if(e.getButton() == MouseEvent.BUTTON3) {
 
 			MatrixTile tile;
@@ -155,7 +155,7 @@ public class Matrix extends JPanel implements MouseListener {
 						tile.changeColor(Color.WHITE);
 						break;
 					}
-					this.repaint();	
+					this.repaint();
 				}
 			}
 		}
@@ -163,7 +163,7 @@ public class Matrix extends JPanel implements MouseListener {
 
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
-		
+
 	}
 
 	@Override
@@ -178,7 +178,7 @@ public class Matrix extends JPanel implements MouseListener {
 
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
-		
+
 	}
 
 /*	@Override

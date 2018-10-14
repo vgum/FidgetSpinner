@@ -15,7 +15,7 @@ public class MatrixHolder extends ArrayList {
         this.matrixList = new ArrayList<Matrix>();
 
         try {
-            savedSpinners = (ArrayList<HashMap<Integer, MatrixTile[]>>) Main.sessionHandler.ReadObjectFromFile(SessionHandler.filepath);
+            savedSpinners = (ArrayList<HashMap<Integer, MatrixTile[]>>) Main.sessionHandler.ReadObjectFromFile("./save/spinners.txt");
 
             if (savedSpinners != null) {
                 for (HashMap<Integer, MatrixTile[]> s : savedSpinners) {

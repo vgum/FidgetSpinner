@@ -21,8 +21,8 @@ public class SetMatrixActionListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-       Main.mainWindow.drawMatrix(Main.mainWindow.matrixHolder.matrixList.get(currentMatrix), Main.mainWindow.matrixHolder.matrixList.get(newMatrix));
-       currentMatrix = this.newMatrix;
+        Main.mainWindow.drawMatrix(Main.mainWindow.matrixHolder.matrixList.get(currentMatrix), Main.mainWindow.matrixHolder.matrixList.get(newMatrix));
+        currentMatrix = this.newMatrix;
     }
 
 }

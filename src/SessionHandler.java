@@ -4,7 +4,7 @@ import java.io.*;
 
 public class SessionHandler {
 
-    public static final String filepath="./save/spinners.txt";
+    private static final String filepath="./save/spinners.txt";
 
     public SessionHandler() {
 
